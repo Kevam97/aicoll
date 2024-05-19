@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nit')->unique();
             $table->string('name');
             $table->string('address');
-            $table->boolean('status');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }
