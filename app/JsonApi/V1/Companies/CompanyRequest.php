@@ -17,6 +17,7 @@ class CompanyRequest extends ResourceRequest
     public function rules(): array
     {
         return [
+            'nit' => ['required', 'string'],
             'name' => ['required', 'string'],
             'address' => ['required', 'string'],
         ];

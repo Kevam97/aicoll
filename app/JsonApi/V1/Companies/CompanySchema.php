@@ -31,6 +31,7 @@ class CompanySchema extends Schema
     {
         return [
             ID::make(),
+            Str::make('nit'),
             Str::make('name'),
             Str::make('address'),
             Boolean::make('status'),

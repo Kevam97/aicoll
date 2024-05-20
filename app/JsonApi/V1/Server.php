@@ -36,4 +36,9 @@ class Server extends BaseServer
             CompanySchema::class
         ];
     }
+
+    public function authorizable(): bool
+    {
+        return false;
+    }
 }

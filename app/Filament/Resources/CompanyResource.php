@@ -13,6 +13,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -29,10 +30,14 @@ class CompanyResource extends Resource
             ->schema([
                 Card::make()
                     ->schema([
-                        TextInput::make('nit'),
-                        TextInput::make('name'),
-                        TextInput::make('address'),
+                        TextInput::make('nit')
+                            ->required(),
+                        TextInput::make('name')
+                            ->required(),
+                        TextInput::make('address')
+                            ->required(),
                         Toggle::make('status')
+                            ->default(true)
                     ])
             ]);
     }
@@ -44,6 +49,7 @@ class CompanyResource extends Resource
                 TextColumn::make('nit'),
                 TextColumn::make('name'),
                 TextColumn::make('address'),
+                IconColumn::make('status')
             ])
             ->filters([
                 //
