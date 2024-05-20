@@ -24,5 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 JsonApiRoute::server('v1')->prefix('v1')->resources(function (ResourceRegistrar $server) {
-    $server->resource('companies', JsonApiController::class)->withoutMiddleware('auth:sanctum');
+    $server->resource('companies', JsonApiController::class);
 });
